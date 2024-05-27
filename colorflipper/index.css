@@ -40,4 +40,28 @@
   border-radius: 50%;
   cursor: pointer;
   font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-center .btn {
+  border: black;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 14px;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-center .nav-links {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
 }/*# sourceMappingURL=index.css.map */
