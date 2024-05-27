@@ -9,12 +9,41 @@
     <link rel="stylesheet" href="style.css.map" />
   </head>
   <body>
-    <section>
+    <section class="mainBlock">
+      <h1>Counter</h1>
+      <span id="value">01</span>
       <div class="block">
-        <button id="dec">Decrease</button>
-        <button id="reset">Reset</button>
-        <button id="inc">Increase</button>
+        <button class="btn dec">Decrease</button>
+        <button class="btn reset">Reset</button>
+        <button class="btn inc">Increase</button>
       </div>
     </section>
+
+    <script>
+      let count = 0;
+      const value = document.querySelector("#value");
+      const btns = document.querySelectorAll(".btn");
+
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          const styles = e.currentTarget.classList;
+          if (styles.contains("dec")) {
+            count--;
+          } else if (styles.contains("inc")) {
+            count++;
+          } else if (styles.contains("reset")) {
+            count = 0;
+          }
+          if (count > 0) {
+            value.style.color = "green";
+          } else if (count < 0) {
+            value.style.color = "red";
+          } else {
+            value.style.color = "blue";
+          }
+          value.textContent = count;
+        });
+      });
+    </script>
   </body>
 </html>
